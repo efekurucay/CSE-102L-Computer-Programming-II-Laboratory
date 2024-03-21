@@ -169,8 +169,9 @@ private int[][] memory ;
 
 
 RAM(String type, int capacity){
-
-initMemory(capacity);
+    this.type=type;
+    this.capacity=capacity;
+    initMemory(capacity);
 }
 
 
