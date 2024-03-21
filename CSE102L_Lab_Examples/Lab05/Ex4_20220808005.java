@@ -1,16 +1,12 @@
-/**
- * lab05_20220808005
- */
-
 import java.util.Random;
 
 /**---------------------------------------------------
 
  * Akdeniz University CSE102L Assignments
 
- * @author: Yahya Efe Kuruçay
+Yahya Efe Kuruçay
 
- * @since: 21.03.2024
+21.03.2024
 
  * Description: Lab05 Exercises
 
@@ -19,7 +15,7 @@ import java.util.Random;
  * Website: https://efekurucay.com
 
 *---------------------------------------------------*/
-public class lab05_20220808005 {
+public class Ex4_20220808005 {
 
     
 }
