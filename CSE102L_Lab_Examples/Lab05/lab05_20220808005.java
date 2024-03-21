@@ -94,16 +94,16 @@ class RAM{
 
 private String type;
 private int capacity;
-private int[] memory ;
+private int[][] memory ;
 
 
 RAM(String type, int capacity){
 
-initMemory();
+initMemory(capacity);
 }
 
 private void initMemory(int capacity) {
-    this.memory = new int[capacity];
+    this.memory = new int[capacity][capacity];
     Random random = new Random();
     for (int i = 0; i < capacity; i++) {
       for (int j = 0; j < capacity; j++) {
