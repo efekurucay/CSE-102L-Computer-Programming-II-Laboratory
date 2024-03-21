@@ -1,6 +1,9 @@
 /**
  * lab05_20220808005
  */
+
+import java.util.Random;
+
 /**---------------------------------------------------
 
  * Akdeniz University CSE102L Assignments
@@ -65,10 +68,14 @@ public double getClock() {
     return clock;
 }
 public int compute (int a, int b){
+try {
+    Thread.sleep((int)(10/(clock*1000)));
 
-Thread.sleep(2000);
+} catch (InterruptedException e) {
+    e.printStackTrace();
+}
+
 return a+b;
-
 }
 
 @Override
@@ -92,19 +99,19 @@ private int[] memory ;
 
 RAM(String type, int capacity){
 
-
-
-
-
-
-
-
+initMemory();
 }
 
-private void initMemory(){
-
-
-}
+private void initMemory(int capacity) {
+    this.memory = new int[capacity];
+    Random random = new Random();
+    for (int i = 0; i < capacity; i++) {
+      for (int j = 0; j < capacity; j++) {
+        this.memory[i][j] = random.nextInt(11); // 0 to 10 (inclusive)
+      }
+    }
+  }
+  
 public String getType(String type){
 
 this.type=type;
