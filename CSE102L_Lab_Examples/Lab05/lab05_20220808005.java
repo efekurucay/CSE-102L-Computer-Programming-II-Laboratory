@@ -127,7 +127,7 @@ private void initMemory(int capacity) {
     Random random = new Random();
     for (int i = 0; i < capacity; i++) {
       for (int j = 0; j < capacity; j++) {
-        this.memory[i][j] = random.nextInt(11); // 0 to 10 (inclusive)
+        this.memory[i][j] = random.nextInt(11); // 0 -10
       }
     }
   }
@@ -135,15 +135,24 @@ private void initMemory(int capacity) {
 
 private boolean check(int i, int j){
 
-return true;
+if (capacity<i || capacity<j) {
+    return false;
+    
+    
+} else {
+    return true;
+}
 
 
 }
 
   
 private int getValue(int i, int j){
-
-    return 1;
+    
+    
+    initMemory(capacity);
+    return memory[i][j];
+    
 }
 
 public int setValue(int i, int j, int value){
