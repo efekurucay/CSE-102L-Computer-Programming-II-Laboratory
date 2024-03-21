@@ -17,7 +17,9 @@ Yahya Efe Kuruçay
 *---------------------------------------------------*/
 public class Ex4_20220808005 {
 
-    
+    public static void main(String[] args) {
+        
+    }
 }
 
 abstract class Computer {
