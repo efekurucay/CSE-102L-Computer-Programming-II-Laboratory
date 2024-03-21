@@ -69,7 +69,7 @@ public double getClock() {
 }
 public int compute (int a, int b){
 try {
-    Thread.sleep((int)(10/(clock*1000)));
+    Thread.sleep((int)((4/clock)*1000));
 
 } catch (InterruptedException e) {
     e.printStackTrace();
@@ -102,6 +102,26 @@ RAM(String type, int capacity){
 initMemory(capacity);
 }
 
+
+
+  
+public String getType(String type){
+
+    this.type=type;
+    
+    return type;
+    }
+    public int getCapacity(int capacity){
+    
+        this.capacity=capacity;
+        return capacity;
+    }
+    public int[][] getMemory(int[][] memory){
+    
+        this.memory=memory;
+        return memory;
+    }
+    
 private void initMemory(int capacity) {
     this.memory = new int[capacity][capacity];
     Random random = new Random();
@@ -111,25 +131,34 @@ private void initMemory(int capacity) {
       }
     }
   }
+
+
+private boolean check(int i, int j){
+
+return true;
+
+
+}
+
   
-public String getType(String type){
+private int getValue(int i, int j){
 
-this.type=type;
-
-return type;
+    return 1;
 }
-public int getCapacity(int capacity){
 
-    this.capacity=capacity;
-    return capacity;
-}
-public int[] getMemory(int[] memory){
+public int setValue(int i, int j, int value){
 
-    this.memory=memory;
-    return memory;
+    check(i, j);
+
+
 }
 
 
+@Override
+public String toString() {
+    
+    return "RAM; "+ type+" "+ capacity+"GB";
+}
 
 
 
