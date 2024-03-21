@@ -152,12 +152,14 @@ private int getValue(int i, int j){
     
     initMemory(capacity);
     return memory[i][j];
-    
+
 }
 
-public int setValue(int i, int j, int value){
+public void setValue(int i, int j, int value){
 
     check(i, j);
+    initMemory(i);
+    memory[i][j]=value;
 
 
 }
