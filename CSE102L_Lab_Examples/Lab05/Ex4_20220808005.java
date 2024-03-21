@@ -22,27 +22,101 @@ public class Ex4_20220808005 {
 
 abstract class Computer {
 
-protected CPU cpu;
-protected RAM ram;
-Computer(CPU cpu, RAM ram){}
-
-public void run(){
-
-
-}
-
-@Override
-public String toString() {
+    protected CPU cpu;
+    protected RAM ram;
+    Computer(CPU cpu, RAM ram){}
     
-    return "Computer: " + cpu +", "+ram;
+    public void run(){
+    
+    
+    }
+    
+    @Override
+    public String toString() {
+        
+        return "Computer: " + cpu +", "+ram;
+    }
+    
+    
+    
+    }
+    
+class Laptop extends Computer {
+
+    private int milliAmp;
+    private int battery;
+
+    public Laptop(CPU cpu, RAM ram, int milliAmp) {
+        super(cpu, ram);
+        this.milliAmp = milliAmp;
+        this.battery = milliAmp * 30 / 100;
+    }
+
+    public int batteryPercentage() {
+        return battery * 100 / milliAmp;
+    }
+
+    public void charge() {
+        while (battery < milliAmp * 90 / 100) {
+            battery += milliAmp * 2 / 100;
+        }
+    }
+
+    @Override
+    public void run() {
+        if (battery > 5) {
+            super.run();
+            battery -= milliAmp * 3 / 100;
+        } else {
+            charge();
+        }
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() + " Battery: " + battery + "%";
+    }
 }
 
+class Desktop extends Computer {
 
+    private ArrayList<String> peripherals;
 
+    public Desktop(CPU cpu, RAM ram, String... peripherals) {
+        super(cpu, ram);
+        this.peripherals = new ArrayList<>(Arrays.asList(peripherals));
+    }
+
+    @Override
+    public void run() {
+        int sum = cpu.compute(ram.getAll()[0], ram.getAll()[1]);
+        for (int i = 2; i < ram.getAll().length; i++) {
+            sum = cpu.compute(sum, ram.getAll()[i]);
+        }
+        ram.set(0, 0, sum);
+    }
+
+    public void plugIn(String peripheral) {
+        peripherals.add(peripheral);
+    }
+
+    public String plugOut() {
+        return peripherals.remove(peripherals.size() - 1);
+    }
+
+    public String plugOut(int index) {
+        return peripherals.remove(index);
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder(super.toString());
+        for (String peripheral : peripherals) {
+            sb.append(" ").append(peripheral);
+        }
+        return sb.toString();
+    }
 }
-
-
-
 
 class CPU{
 
@@ -86,6 +160,7 @@ public String toString() {
 
 
 }
+
 class RAM{
 
 private String type;
