@@ -281,6 +281,8 @@ Gallery(){
 
 void addCar(Car car){
 
+    if (car instanceof Combustion){}
+
 }
 void addCombustionCar(Combustion car){
 
@@ -293,6 +295,8 @@ void addElectricCar(Electric car){
 }
 
 void displayRentableCars(){
+
+    
 
 
 }
