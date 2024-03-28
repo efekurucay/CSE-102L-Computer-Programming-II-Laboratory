@@ -4,7 +4,7 @@
  * since: 28.03.2024
  * Description: Abstract classes and interfaces
  * Score: ?
- * Website: https://efekurucay.com
+ * Website:  https://efekurucay.com
 *---------------------------------------------------*/
 import java.util.ArrayList;
 /***
