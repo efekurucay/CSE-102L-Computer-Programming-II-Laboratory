@@ -64,9 +64,9 @@ public class HW04_20220808005 {
         System.out.println(laptop.toString());
         System.out.println(desktop.toString());
     }
+}
 
-
-    static class Computer {
+    class Computer {
         protected CPU cpu;
         protected RAM ram;
 
@@ -105,7 +105,7 @@ public class HW04_20220808005 {
         }
     }
 
-    static class Laptop extends Computer {
+    class Laptop extends Computer {
         private int milliAmp;
         private int battery;
 
@@ -141,7 +141,7 @@ public class HW04_20220808005 {
         }
     }
 
-    static class Desktop extends Computer {
+    class Desktop extends Computer {
         private ArrayList<String> peripherals;
 
         public Desktop(CPU cpu, RAM ram, String... peripherals) {
@@ -192,7 +192,7 @@ public void run() throws ComputationException, MemoryException {
         }
     }
 
-    static class CPU {
+    class CPU {
         private String name;
         private double clock;
 
@@ -227,7 +227,7 @@ public void run() throws ComputationException, MemoryException {
         }
     }
 
-    static class RAM {
+    class RAM {
         private String type;
         private int capacity;
         private int[][] memory;
@@ -282,7 +282,7 @@ public void run() throws ComputationException, MemoryException {
         }
     }
 
-    static class MemoryException extends RuntimeException {
+    class MemoryException extends RuntimeException {
         private RAM ram;
         private int address1;
         private int address2;
@@ -295,7 +295,7 @@ public void run() throws ComputationException, MemoryException {
         }
     }
 
-    static class ComputationException extends Exception {
+    class ComputationException extends Exception {
         private CPU cpu;
         private int value1;
         private int value2;
@@ -314,7 +314,7 @@ public void run() throws ComputationException, MemoryException {
             this.value2 = e.value2;
         }
     }
-}
+
 
  /***
  *              _____                    _____                    _____          
