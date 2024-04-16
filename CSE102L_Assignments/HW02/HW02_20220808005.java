@@ -1,5 +1,21 @@
 import java.util.Date;
+/**-----------------------------------------------------
+* Akdeniz University CSE102L Lab Assignments
+* Name: Yahya Efe Kurucay
+* Date: 16.04.2024
+* Description: Homework02
+* Score: 100
+* Website: https://efekurucay.com
+*----------------------------------------------------- */
+/*
+ * Bu bir otomatik maildir!!
+ -------------START----------------
+20220808005 - HW02->100
+Test Result
+Successfull!
+--------------END-----------------
 
+ */
 public class HW02_20220808005 {
     public static void main(String[] args) {
         // Creating cities
