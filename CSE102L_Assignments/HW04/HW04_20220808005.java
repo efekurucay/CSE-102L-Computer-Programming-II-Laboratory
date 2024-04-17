@@ -4,9 +4,72 @@
  * author: Yahya Efe Kuruçay
  * since: 07.04.2024
  * Description: Homework04
- * Score: ?
+ * Score: 90
  * Website: https://efekurucay.com
 *---------------------------------------------------*/
+/*
+ * Bu bir otomatik maildir!!
+ -------------START----------------
+20220808005 - HW04->90
+Test Result
+╷
+├─ JUnit Jupiter ✔
+├─ JUnit Vintage ✔
+│  └─ HW04_20220808005Test ✔
+│     ├─ shouldCreateDesktop ✔
+│     ├─ RAMClassFieldTypeControl ✔
+│     ├─ ShouldNotBeAnInnerClass ✔
+│     ├─ shouldNotComputeWhenBatteryLessThan5Percent ✔
+│     ├─ RAMcheckShouldReturnTrue ✔
+│     ├─ shouldComputeLeftDiagonalSumWithRunMethod ✘ expected:<94> but was:<5>
+│     ├─ shouldExtendComputerClass ✔
+│     ├─ LaptopShouldNotHaveAccessorsAndMutators ✔
+│     ├─ ComputerShouldNotHaveAccessorsAndMutators ✔
+│     ├─ shouldCreateLaptop ✔
+│     ├─ RAMcheckShouldDeclareMemoryExceptionThrows ✔
+│     ├─ CPUcomputeShouldThrowComputationException ✔
+│     ├─ shouldCreateComputer ✔
+│     ├─ shouldCreateCPU ✔
+│     ├─ shouldCreateRAM ✔
+│     ├─ DesktopShouldNotHaveAccessorsAndMutators ✔
+│     ├─ shouldHandleExceptionWithFixComputation ✔
+│     ├─ CPUShouldHaveCorrectConstructorWith2Parameter ✔
+│     ├─ shouldExtendComputerClass2 ✔
+│     ├─ LaptopShouldGetBatteryPercentage ✔
+│     ├─ DesktopShouldSumLeftDiagonalWithRunMethod ✘ expected:<1322> but was:<6>
+│     ├─ LaptopClassFieldModifierControl ✔
+│     ├─ CPUshouldNotHaveMutators ✔
+│     ├─ shouldHaveClasses ✔
+│     ├─ LaptopShouldHaveCorrectConstructorWith3Parameter ✔
+│     ├─ shouldChargeBattery ✔
+│     ├─ RAMshouldNotHaveMutators ✔
+│     ├─ CPUClassFieldModifierControl ✔
+│     ├─ ShouldFixComputationException ✘ org.opentest4j.AssertionFailedError
+│     ├─ DesktopShouldHaveCorrectConstructorWith2Parameter ✔
+│     ├─ ComputerClassFieldModifierControl ✔
+│     ├─ LaptopClassFieldTypeControl ✔
+│     ├─ RAMClassModifierControl ✔
+│     ├─ CPUshouldCompute ✔
+│     ├─ CPUClassFieldTypeControl ✔
+│     ├─ LaptopShouldBatteryPercentageControl ✔
+│     ├─ RAMshouldInitMemoryWithRandomVals ✔
+│     ├─ RAMshouldHaveAccessors ✔
+│     ├─ RAMShouldHaveCorrectConstructorWith2Parameter ✔
+│     ├─ DesktopClassFieldTypeControl ✘ null Should override run method of super class
+│     ├─ shouldComputerHaveCorrectConstructorWith2Parameter ✔
+│     ├─ shouldChargeAutomaticallyWhenBatteryLessThan5Percent ✘ Should automatically charge in run method when battery level < 5% expected:<91> but was:<29>
+│     ├─ RAMshouldGetSetValue ✔
+│     ├─ shouldLaptopLeftDiagonalSumWithRunMethod ✘ expected:<73> but was:<9>
+│     ├─ DesktopClassFieldModifierControl ✔
+│     ├─ DesktopConstructorShouldTakeVarArgs ✔
+│     ├─ RAMgetsetValueShouldThrowMemoryException ✔
+│     ├─ ComputerRunShouldDeclareExceptionThrows ✔
+│     └─ CPUshouldHaveAccessors ✔
+└─ JUnit Platform Suite ✔
+
+
+--------------END-----------------
+ */
 /***
  *    ███████ ███████ ███████ 
  *    ██      ██      ██      

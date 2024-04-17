@@ -9,11 +9,69 @@ import java.util.Random;
 
  * Description: Homework03
 
- * Score: ?
+ * Score: 98
 
  * Website: https://efekurucay.com
 
 *---------------------------------------------------*/
+/*
+ * Bu bir otomatik maildir!!
+ -------------START----------------
+20220808005 - HW03->98
+Test Result
+╷
+├─ JUnit Jupiter ✔
+├─ JUnit Vintage ✔
+│  └─ HW03_20220808005Test ✔
+│     ├─ AuthorClassFieldModifierControl ✔
+│     ├─ BookShouldHaveCorrectConstructorWith4Parameter ✔
+│     ├─ shouldHavePaperBookClass ✔
+│     ├─ authorShouldNotBeAnInnerClass ✔
+│     ├─ BookShouldHaveCorrectConstructorWith3Parameter ✔
+│     ├─ eBookClassFieldModifierControl ✔
+│     ├─ shouldCreateAuthor ✔
+│     ├─ PaperBookShouldHaveCorrectConstructorWith6Parameters ✔
+│     ├─ PaperBookShouldNotHaveMutatorMethods ✔
+│     ├─ shouldAuthorHave1Constructor ✔
+│     ├─ PaperBookShouldBeSubClass ✔
+│     ├─ testingAccessorsOfAuthor ✔
+│     ├─ bookShouldHave2Constructors ✔
+│     ├─ ebookShouldHave2Constructors ✔
+│     ├─ testingAccessorsOfPaperBook ✘ Should have accessor methods (1 failure)
+│     │         java.lang.IllegalArgumentException: wrong number of arguments: 0 expected: 1
+│     ├─ shouldHaveEBookClass ✔
+│     ├─ PaperBookClassFieldTypeControl ✔
+│     ├─ PaperBookShouldHave2Constructors ✔
+│     ├─ bookShouldNotBeAnInnerClass ✔
+│     ├─ ebookShouldNotBeAnInnerClass ✔
+│     ├─ eBookClassFieldTypeControl ✔
+│     ├─ testingAccessorsOfEBook ✔
+│     ├─ eBookShouldNotHaveMutatorMethods ✔
+│     ├─ PaperBookShouldHaveCorrectConstructorWith4Parameter ✔
+│     ├─ testingAccessorsOfBook ✔
+│     ├─ PaperBookShouldNotBeAnInnerClass ✔
+│     ├─ shouldCreateBookWith4Paramters ✔
+│     ├─ AuthorShouldNotHaveMutatorMethods ✔
+│     ├─ shouldSetMailOfAuthorInstance ✔
+│     ├─ shouldCreateBookWith3Paramters ✔
+│     ├─ EBookShouldBeSubClass ✔
+│     ├─ shouldAuthorHaveCorrectConstructorWith3Parameter ✔
+│     ├─ PaperBookClassFieldModifierControl ✔
+│     ├─ BookClassFieldTypeControl ✔
+│     ├─ eBookShouldHaveCorrectConstructorWith6Parameters ✔
+│     ├─ AuthorClassFieldTypeControl ✔
+│     ├─ shouldHaveAuthorClass ✔
+│     ├─ BookShouldNotHaveMutatorMethods ✔
+│     ├─ BookClassFieldModifierControl ✔
+│     ├─ shouldHaveBookClass ✔
+│     ├─ BookShouldHaveCorrectConstructorWith5Parameter ✔
+│     └─ shouldSetPriceOfBook ✔
+└─ JUnit Platform Suite ✔
+
+
+--------------END-----------------
+
+ */
 /***
  *    ███████╗███████╗███████╗
  *    ██╔════╝██╔════╝██╔════╝
