@@ -16,16 +16,11 @@ import java.util.*;
  *    |_______||__|     |_______|
  *                               
  */
-import java.util.*;
- 
 public class Quiz01_20220808005 {
-    public static void main(String[] args) {
-
-        
-      }
-      
+public static void main(String[] args) {
+    
 }
- 
+}
 // Interfaces
 interface Item extends Comparable<Item> {
     double getPrice();
@@ -39,13 +34,11 @@ interface PaymentMethod {
 interface Colorable {
     void paint(String color);
 }
- 
-
 
 // Classes
 abstract class Product implements Item {
-    protected String name;
-    protected double price;
+    private String name;
+    private double price;
  
     public Product(String name, double price) throws InvalidPriceException {
         if (price < 0)
@@ -92,6 +85,7 @@ class Tax implements Item {
 
     @Override
     public int compareTo(Item o) {
+        
         throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
     }
 }
