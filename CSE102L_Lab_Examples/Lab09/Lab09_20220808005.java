@@ -21,7 +21,7 @@
 
 import java.util.*;
 
-public class Main {
+public class Lab09_20220808005 {
 
     public static void main(String[] args) {
 
@@ -232,6 +232,48 @@ public T getItem(int index) {
     public int compareTo(Object o) {
         return 0;
     }
+
+
+
+
+}
+
+class Rented <T extends Rentable, E extends Person>{
+
+T item;
+E renter;
+
+Date startDate;
+Date endDate;
+
+Rented(T item, E renter, Date starDate, Date endDate){
+
+    this.endDate=endDate;
+    this.startDate=starDate;
+    this.item=item;
+    this.renter=renter;
+
+}
+
+public Date getEndDate() {
+    return endDate;
+}
+
+
+public T getItem() {
+    return item;
+}   
+
+
+public E getRenter() {
+    return renter;
+}
+
+
+public Date getStartDate() {
+    return startDate;
+}
+
 
 
 
