@@ -8,9 +8,85 @@ import java.util.Random;
  * author: Yahya Efe Kuruçay
  * since: 14.04.2024
  * Description: Homework05
- * Score: ?
+ * Score: 91
  * Website: https://efekurucay.com
 *---------------------------------------------------*/
+/*
+ * Bu bir otomatik maildir!!
+ -------------START----------------
+20220808005 - HW05->91
+Test Result
+╷
+├─ JUnit Jupiter ✔
+├─ JUnit Vintage ✔
+│  └─ HW05_20220808005Test ✔
+│     ├─ SpellHealMethod ✔
+│     ├─ CombatMethods ✔
+│     ├─ PaladinFields ✔
+│     ├─ PlayableCharacterFields ✔
+│     ├─ PaladinConstructor ✔
+│     ├─ ClericLevelUp ✔
+│     ├─ SpellAcessorMutators ✔
+│     ├─ ClericCastSpell ✘ castSpell should increase the health of Damageable parameter object
+│     ├─ ClassesShouldImplement ✔
+│     ├─ CharacterNotHaveMutators ✔
+│     ├─ AttributesNotHaveMutators ✔
+│     ├─ PartyRemoveCharacterThrowCharacterNotInPartyExcepiton ✘ Should have thrown CharacterIsNotInPartyExcepiton
+│     ├─ PartyRemoveCharacter ✘ removeCharacter should remove from corresponding collection expected:<1> but was:<0>
+│     ├─ PartyAddCharacterThrowPartyLimitReached ✔
+│     ├─ PartyFields ✔
+│     ├─ CharacterConstructor ✔
+│     ├─ ClericLearnSpell ✔
+│     ├─ NotBeInnerClass ✔
+│     ├─ AttributesFields ✔
+│     ├─ AbstractClasses ✔
+│     ├─ AttributesAcessor ✔
+│     ├─ ClericFields ✔
+│     ├─ DamageableMethods ✔
+│     ├─ ClassesConstructors ✔
+│     ├─ PaladinLevelUp ✔
+│     ├─ PlayableCharacterConstructor ✔
+│     ├─ WarriorAttack ✔
+│     ├─ WeaponAttackMethod ✔
+│     ├─ WarriorFields ✔
+│     ├─ PlayableCharacterQuitParty ✔
+│     ├─ ChildClassesShouldExtend ✔
+│     ├─ WarriorLevelUp ✔
+│     ├─ WeaponConstructor ✔
+│     ├─ WarriorTakeDamage ✔
+│     ├─ ClericIsAlive ✔
+│     ├─ WeaponFields ✔
+│     ├─ ClericTakeHealing ✔
+│     ├─ ClericTakeDamage ✔
+│     ├─ ClericConstructor ✔
+│     ├─ CharacterAcessors ✔
+│     ├─ PartyAddCharacter ✘ Warrior instance should be added to fighters expected:<1> but was:<0>
+│     ├─ CharacterLevelUpMethod ✔
+│     ├─ CharacterFields ✔
+│     ├─ AttributesIncreaseMethods ✔
+│     ├─ UseableMethods ✔
+│     ├─ WarriorTakeHealing ✔
+│     ├─ WeaponAcessorMutators ✔
+│     ├─ SpellFields ✔
+│     ├─ CasterMethods ✔
+│     ├─ PartyLevelUp ✘ Should increase the level of all party members once (3 failures)
+│     │         java.lang.AssertionError: Cleric should be level 1 expected:<1> but was:<0>
+│     │         java.lang.AssertionError: Cleric should be level 1 expected:<1> but was:<0>
+│     │         java.lang.AssertionError: Paladin should be level 1 expected:<1> but was:<0>
+│     ├─ AttributesConstructor ✔
+│     ├─ WarriorConstructor ✔
+│     ├─ WarriorLootWeapon ✔
+│     ├─ NPCConstructor ✔
+│     ├─ CharacterAcessor ✔
+│     ├─ PlayableCharacterJoinParty ✘ joinParty should add PlayableCharacter to suitable collection expected:<1> but was:<0>
+│     ├─ SpellConstructor ✔
+│     └─ WarriorIsAlive ✔
+└─ JUnit Platform Suite ✔
+
+
+--------------END-----------------
+
+ */
 /***
  *    ███████ ███████ ███████   |    ███████ ███████ ███████ 
  *    ██      ██      ██        |    ██      ██      ██      

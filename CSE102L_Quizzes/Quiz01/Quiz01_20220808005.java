@@ -4,9 +4,64 @@ import java.util.*;
  * author: Yahya Efe Kuruçay
  * since: 17.04.2024
  * Description: Quiz01
- * Score: ?
+ * Score: 80
  * Website: https://efekurucay.com
 *---------------------------------------------------*/
+/*
+ * Bu bir otomatik maildir!!
+ -------------START----------------
+20220808005 - Quiz01->80
+Test Result
+╷
+├─ JUnit Jupiter ✔
+├─ JUnit Vintage ✔
+│  └─ Quiz01_20220808005Test ✔
+│     ├─ TaxShouldHaveConstructorWith2Parameters ✘ Tax should have Product(int, Item) constructor
+│     ├─ CreditCardMutators ✘ Method setCardNumber does not exists
+│     ├─ ProductComparable ✘ Method compareTo does not exists
+│     ├─ CreditCardConstructorInvalidPriceThrownCVV ✔
+│     ├─ TaxDataFields ✔
+│     ├─ CustomerShouldHaveSetPayment ✔
+│     ├─ InterfacesShouldHaveCorrectMethods ✔
+│     ├─ ClassesShouldImplementCorrectInterfaces ✔
+│     ├─ DiscountDataFields ✔
+│     ├─ ProductSetPriceInvalidPriceThrown ✔
+│     ├─ ProductShouldHaveConstructorWith2Parameters ✔
+│     ├─ CustomerAddItem ✔
+│     ├─ setCardNumberCreditCardExceptionThrown ✘ Method setCardNumber does not exists
+│     ├─ ColorableItemPaymentMethodShouldBeInterface ✔
+│     ├─ CustomerDataFields ✔
+│     ├─ ItemInterfaceShouldExtendComparableWithGenericTypeItem ✔
+│     ├─ CustomerShouldHaveConstructorWith1Parameter ✔
+│     ├─ ClassesShouldHaveOneConstructor ✔
+│     ├─ ProductDataFields ✔
+│     ├─ ProductMutators ✔
+│     ├─ CreditCardConstructorInvalidPriceThrownCreditCardNumber ✔
+│     ├─ setCvvCreditCardExceptionThrown ✘ Field setCvv does not exists
+│     ├─ PayPalShouldHaveConstructorWith2Parameters ✔
+│     ├─ PayPalDataFields ✔
+│     ├─ DiscountAccessors ✘ Discount.<init>(int,Item)
+│     ├─ PayPalPay ✔
+│     ├─ CreditCardDataFields ✔
+│     ├─ ChildClassesShouldExtendCorrectClass ✔
+│     ├─ CreditCardShouldHaveConstructorWith4arameters ✔
+│     ├─ CustomerAddItemTaxedMoreIfExpensive ✔
+│     ├─ DiscountShouldHaveConstructorWith2Parameters ✘ Discount should have Product(int, Item) constructor
+│     ├─ CustomerAddItemTaxed ✔
+│     ├─ ProductAccessors ✔
+│     ├─ ClassesShouldNotBeAnInnerClass ✔
+│     ├─ CustomerShouldHaveAccessor ✔
+│     ├─ CreditCardPay ✘ CreditCard pay should clear (1 failure)
+│     │         java.lang.AssertionError: Should tax each item in cart
+│     ├─ TaxAccessors ✘ Tax.<init>(int,Item)
+│     ├─ CreditPrivateMethods ✘ Method setCardNumber does not exists
+│     ├─ ProductShouldBeAbstract ✔
+│     └─ ProductConstructorInvalidPriceThrown ✔
+└─ JUnit Platform Suite ✔
+
+
+--------------END-----------------
+ */
 /***
  *     _______  _______  _______ 
  *    |   ____||   ____||   ____|

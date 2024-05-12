@@ -1,0 +1,21 @@
+==== CONFIGS ====		
+{
+    "base_path": "d:\\Ders Notları\\CSE\\CSE1_Spring(2024)\\CSE-102L-Computer-Programming-II-Laboratory\\CSE102L_Lab_Examples\\Lab10",
+    "out": "d:\\Ders Notları\\CSE\\CSE1_Spring(2024)\\CSE-102L-Computer-Programming-II-Laboratory\\CSE102L_Lab_Examples\\Lab10\\javadoc",
+    "javadoc_executable": "C:\\Program Files\\Java\\jdk-21\\bin\\javadoc.exe",
+    "exclude": [],
+    "raw_params": ""
+}
+
+==== COMMAND ====
+"C:\Program Files\Java\jdk-21\bin\javadoc.exe" 
+	-sourcepath "d:\Ders Notları\CSE\CSE1_Spring(2024)\CSE-102L-Computer-Programming-II-Laboratory\CSE102L_Lab_Examples\Lab10" 
+	-d "d:\Ders Notları\CSE\CSE1_Spring(2024)\CSE-102L-Computer-Programming-II-Laboratory\CSE102L_Lab_Examples\Lab10\javadoc" 
+	"d:\Ders Notları\CSE\CSE1_Spring(2024)\CSE-102L-Computer-Programming-II-Laboratory\CSE102L_Lab_Examples\Lab10\Lab10_20220808005.java"
+
+
+==== JAVADOC OUTPUT ====
+error: File not found: "d:\Ders Notlari\CSE\CSE1_Spring(2024)\CSE-102L-Computer-Programming-II-Laboratory\CSE102L_Lab_Examples\Lab10\Lab10_20220808005.java"
+1 error
+
+

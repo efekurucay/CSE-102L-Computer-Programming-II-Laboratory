@@ -4,9 +4,17 @@
  * author: Yahya Efe Kuruçay
  * since: 08.05.2024
  * Description: Homework06
- * Score: ?
+ * Score: 100
  * Website: https://efekurucay.com
 *---------------------------------------------------*/
+/*
+ * Bu bir otomatik maildir!!
+ -------------START----------------
+20220808005 - HW06->100
+Test Result
+Successfull!
+--------------END-----------------
+ */
 /***
  *    ███████╗███████╗███████╗
  *    ██╔════╝██╔════╝██╔════╝
