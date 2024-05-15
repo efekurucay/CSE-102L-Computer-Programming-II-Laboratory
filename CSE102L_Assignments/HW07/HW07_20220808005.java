@@ -16,36 +16,17 @@
  *                            
  *                            
  */
-
 public class HW07_20220808005 {
     public static void main(String[] args) {
-        // // Create instances of classes
-        // Box<Paper> paperBox = new Box<>();
-        // Mirror mirror = new Mirror(10, 20);
-        // Matroschka<Paper> matroschka = new Matroschka<>(new Paper());
-        // CargoCompany cargoCompany = new CargoCompany();
 
-        // // Add items to the paper box
-        // Paper paper = new Paper();
-        // paper.setNote("Hello, world!");
-        // paperBox.pack(paper);
-
-        // // Add boxes to the cargo company
-        // cargoCompany.add(paperBox);
-        // cargoCompany.add(matroschka);
-        // cargoCompany.add(new Box<>(mirror, 30));
-
-        // // Ship the cargo fleet
-        // cargoCompany.ship();
     }
 }
 
-//Sellable interface
 interface Sellable {
-    String getName();    // name of sellable item
-    double getPrice();  // price of sellable item
+    String getName();    
+    double getPrice();  
 }
-//Box class
+
 class Box<T extends Sellable> implements Package<T> {
     private T item;
     private boolean seal;
@@ -101,10 +82,10 @@ class Box<T extends Sellable> implements Package<T> {
     public double getPriority() {
         if (!isEmpty()) {
             double price = item.getPrice();
-            // Example calculation: priority = price / distance
+           
             return price / distanceToAddress;
         }
-        return 0; // Return 0 if the box is empty
+        return 0;
     }
 
     @Override
@@ -117,89 +98,74 @@ class Box<T extends Sellable> implements Package<T> {
     }
 }
 
-//CargoCompany class
 class CargoCompany {
-    private Stack<Container> stack;
-    private PriorityQueue<CargoFleet> queue;
+    private CargoFleet queue;
+    private Container stack;
 
-   
-    public CargoCompany() {
-        this.stack = new Stack<>();
-        this.queue = new PriorityQueue<>();
+    CargoCompany() {
+        this.queue = new CargoFleet();
+        this.stack = new Container();
     }
 
-
-    public <T extends Box<?>> void add(T box) {
-        if (stack.isEmpty() || stack.peek().isFull()) {
-            Container container = new Container();
-            container.add(box);
-            stack.push(container);
-        } else {
-            stack.peek().add(box);
+    public <T extends Box<?>> void add(T box){
+        if(stack.size()< Container.DEFAULT_CAPACITY){
+            stack.push(box);
         }
-
-        if (stack.size() == Container.MAX_CAPACITY) {
-            queue.add(new CargoFleet(stack));
-            stack = new Stack<>();
+        else if(queue.size()<CargoFleet.FLEET_CAPACITY){
+            queue.enqueue(stack);
+            stack = new Container();
+            stack.push(box);
         }
-
-        if (queue.size() == CargoFleet.MAX_FLEET_CAPACITY) {
+        else{
             ship(queue);
+            stack.push(box);
         }
     }
 
-
-    private void ship(PriorityQueue<CargoFleet> fleet) {
+    private void ship(CargoFleet fleet){
         while (!fleet.isEmpty()) {
-            empty(fleet.poll().getContainer());
-        }
+            empty(fleet.dequeue());
+        } 
     }
 
- 
-    private void empty(Container container) {
+    private void empty(Container container){
         while (!container.isEmpty()) {
-            deliver(container.extract());
+            deliver(container.pop());
         }
     }
 
-    // Delivers a box and extracts its contents
-    private <T extends Box<?>> Sellable deliver(T box) {
+    private <T extends Box<?>> Sellable deliver(T box){
         return box.extract();
     }
+    
 }
 
 interface Common<T> {
-    // Checks if the collection is empty
+  
     boolean isEmpty();
 
-    // Retrieves, but does not remove, the head of this collection
     T peek();
 
-    // Returns the number of elements in this collection
     int size();
 }
 
 interface Wrappable extends Sellable {
 
-    // No additional methods, inherits getName() and getPrice() from Sellable
 }
 
 class Matroschka<T extends Wrappable> extends Product implements Wrappable, Package<T> {
     private T item;
 
     public Matroschka(T item) {
-        super("Matroschka", 5.0); // Base price of Matroschka is 5.0
+        super("Matroschka", 5.0); 
         this.item = item;
         if (item != null) {
             double totalPrice = getPrice() + item.getPrice();
-            setPrice(totalPrice);
+           
         }
     }
 
-    private void setPrice(double totalPrice) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setPrice'");
-    }
+
 
     @Override
     public T extract() {
@@ -238,7 +204,7 @@ class Mirror extends Product {
     private int height;
 
     public Mirror(int width, int height) {
-        super("Mirror", 2.0); // Base price of Mirror is 2.0
+        super("Mirror", 2.0); 
         this.width = width;
         this.height = height;
     }
@@ -249,8 +215,8 @@ class Mirror extends Product {
 
     @Override
     public double getPrice() {
-        // Price calculation based on area
-        return 0.5 * getArea(); // $0.5 per unit area
+     
+        return 0.5 * getArea(); 
     }
 
     public <T> T reflect(T item) {
@@ -283,7 +249,7 @@ class Paper extends Product implements Wrappable {
     private String note;
 
     public Paper() {
-        super(0.5); // Base price of 0.5
+        super(0.5); 
     }
 
     public String getNote() {
@@ -296,7 +262,7 @@ class Paper extends Product implements Wrappable {
 }
 
 interface PriorityQueue<T> extends Common<T> {
-    int FLEET_CAPACITY = 10; // Default fleet capacity
+    int FLEET_CAPACITY = 10; 
 
     boolean enqueue(T item);
 
@@ -310,6 +276,9 @@ abstract class Product implements Sellable {
     public Product(String name, double price) {
         this.name = name;
         this.price = price;
+    }
+
+    public Product(double d) {
     }
 
     public String getName() {
@@ -335,8 +304,146 @@ interface Stack<T> extends Common<T> {
     T pop();
 }
 
+class CargoFleet implements PriorityQueue<Container> {
+    private Container head;
+    private int size;
+    
+    CargoFleet() {
+        this.head = null;
+        this.size = 0;
+    }
 
+    @Override
+    public boolean enqueue(Container item) {
+        if(size< PriorityQueue.FLEET_CAPACITY){
+            if(head== null){
+                head = item;
+            }
+            else{
+                Container instant = head;
+                while(instant.getNext() != null && instant.getNext().getPriority()<item.getPriority()){
+                    instant = instant.getNext();
+                }
+                item.setNext(instant.getNext());
+                instant.setNext(item);
+            }
+            size++;
+            return true;
+        }
+        return false;
+    }
 
+    @Override
+    public Container dequeue() {
+        if(!isEmpty()){
+            Container remove = head;
+            head = head.getNext();
+            size--;
+            return remove;
+        }
+        return null;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size == 0;
+    }
+
+    @Override
+    public Container peek() {
+        return head;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+    
+}
+
+class Container implements Stack<Box<?>>, Node<Container>, Comparable<Container>{
+    private Box<?>[] boxes;
+    private Container next;
+    private double priority ;
+    private int size;
+    private int top;
+
+    
+    Container(){
+        boxes = new Box[DEFAULT_CAPACITY];
+    }
+
+    @Override
+    public String toString() {
+        return "Priority of container:" + priority;
+    }
+    
+    @Override
+    public int compareTo(Container o) {
+        return Double.compare(this.priority, o.priority);
+    }
+    
+    @Override
+    public Container getNext() {
+        return next;
+    }
+
+    @Override
+    public double getPriority() {
+        return priority;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return size == 0 ;
+    }
+
+    @Override
+    public Box<?> peek() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            return boxes[top];
+        }
+    }
+
+    @Override
+    public Box<?> pop() {
+        if (isEmpty()) {
+            return null;
+        } else {
+            Box<?> removed = boxes[top];
+            boxes[top] = null;
+            top--;
+            size--;
+            return removed;
+        }
+    }
+
+    @Override
+    public boolean push(Box<?> item) {
+        if (size < boxes.length) {
+            top++;
+            boxes[top] = item;
+            size++;
+            return true;
+        } else {
+            return false; 
+        }
+    }
+    
+     @Override
+    public void setNext(Container item) {
+        this.next = item;
+    }
+
+    @Override
+    public int size() {
+        return size;
+    }
+    
+
+}
 
 /***
  *              _____                    _____                    _____          
