@@ -22,19 +22,131 @@
 
 
 
-
-
-
-
-
-
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class Lab11_20220808005 {
+ class Efe {
+    public static void main(String[] args) throws Exception {
+        Set<String> fruits = new HashSet<>();
+
+        fruits.add("apple");
+        fruits.add("banana");
+        fruits.add("orange");
+        System.out.println(fruits);
+        fruits.add("apple");
+        System.out.println(fruits);
+        fruits.remove("apple");
+        System.out.println(fruits);
+        fruits.add("apple");
+        System.out.println(fruits);
+        fruits.clear();
+        System.out.println(fruits);
+        Set<String> otherFruits = new HashSet<>();
+        otherFruits.add("kiwi");
+        otherFruits.add("mango");
+        otherFruits.add("banana");
+        otherFruits.add("mango");
+        System.out.println(otherFruits);
+        fruits.removeAll(otherFruits);
+        System.out.println(fruits);
+        System.out.println(fruits.contains("apple"));
+        System.out.println(fruits.contains("banana"));
+        otherFruits.removeAll(fruits);
+        fruits = new TreeSet<>();
+        fruits.add("banana");
+        fruits.add("Orange");
+        fruits.add("Apple");
+        System.out.println(fruits);
+
+        //HashMap
+        Map<Integer,String> map = new HashMap<>();
+        map.put(1, "One");
+        map.put(2, "two");
+        System.out.println(map.get(1));
+        System.out.println(map.get(2));
+        map.remove(1); //for remove the elements
+        System.out.println(map);
+        map.put(1, "three");
+        System.out.println(map);
+        map.put(1, "one");
+
+
+
+
+        map.putIfAbsent(1, "four");
+        System.out.println(map);
+        map.putIfAbsent(4, "four");
+        System.out.println(map);
+        
+
+
+        map = new LinkedHashMap<>();
+        map = new TreeMap<>();
+
+        TreeSet<Course> treeset = new Treeset<>();
+        treeset.add(c2);
+        treeset.add(c4);
+
+        
+
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Lab11_20220808005 {
 
     // Task 1: Word Frequency Counter
     public static TreeMap<String, Integer> wordFrequencyCounter(String fileName) throws IOException {
