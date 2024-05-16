@@ -34,7 +34,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class WordProcessor {
+public class Lab11_20220808005 {
 
     // Task 1: Word Frequency Counter
     public static TreeMap<String, Integer> wordFrequencyCounter(String fileName) throws IOException {
