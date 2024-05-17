@@ -27,18 +27,11 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
-public class Lab11_20220808005 {
-    import java.util.HashMap;
-    import java.util.HashSet;
-    import java.util.LinkedHashMap;
-    import java.util.Map;
-    import java.util.Map.Entry;
-    import java.util.Set;
-    import java.util.TreeMap;
-    import java.util.TreeSet;
+class Lab11F_20220808005 {
+
     
-    public class lab11 {
-        public static void main(String[] args) throws Exception {
+
+        public static void main2(String[] args) throws Exception {
             Set<String> fruits = new HashSet<>();
     
             fruits.add("apple");
@@ -124,12 +117,16 @@ public class Lab11_20220808005 {
             map.put(-1, "two");
             System.out.println(map);
     
+            @SuppressWarnings("unused")
             TreeMap<String, TreeSet<Course>> treeMap = new TreeMap<>();
     
+            @SuppressWarnings("unused")
             Student s1 = new Student(5);
+            @SuppressWarnings("unused")
             Student s2 = new Student(2);
+            @SuppressWarnings("unused")
             Student s3 = new Student(8);
-    
+            @SuppressWarnings("unused")
             Course c1 = new Course("Math");
             Course c2 = new Course("Physics");
             Course c4 = new Course("cse102L");
@@ -138,96 +135,87 @@ public class Lab11_20220808005 {
             treeSet.add(c2);
             treeSet.add(c4);
     
-            treeMap.put(s1, treeSet);
-            
-            
-            
-    
+              
             
         }
+    }
     
-        class Student implements Comparable<Student> {
-            int studentId;
-    
-            Student(int id) {
-                this.studentId = studentId;
-            }
-    
-            @Override
-            public int compareTo(Student o) {
-                return studentId;
-            }
-    
-            @Override
-            public String toString() {
-                return String.valueOf(studentId);
-            }
-        }
-    
-        class Course implements Comparable<Course> {
-            String courseId;
-    
-            Course(String courseId) {
-                this.courseId = courseId;
-            }
-    
-            @Override
-            public int compareTo(lab11.Course o) {
-                // TODO Auto-generated method stub
-                throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
-            }
-    
-            
-    
+class Student implements Comparable<Student> {
+        int studentId;
+
+        Student(int id) {
             
         }
-    
-        
+
+        @Override
+        public int compareTo(Student o) {
+            return studentId;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(studentId);
+        }
     }
 
-}
+class Course implements Comparable<Course> {
+        String courseId;
+
+        Course(String courseId) {
+            this.courseId = courseId;
+        }
+
+      
+
+        @Override
+        public int compareTo(Course o) {
+            throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+        }
+
+    }
 
 
+public class Lab11_20220808005 {
+        
+        public static TreeMap<String, Integer> wordFrequencyCounter(String fileName) throws IOException {
+                TreeMap<String, Integer> wordFrequencyMap = new TreeMap<>();
+        
+                BufferedReader reader = new BufferedReader(new FileReader(fileName));
+
+                String line;
+
+                while ((line = reader.readLine()) != null) {
+
+                line = line.toLowerCase().replaceAll("[^a-zA-Z ]", ""); // noktalamaları silip küçük harfe dönüştüruyro
+
+                 String[] words = line.split("\\s+"); // boşlukları ayırıyor
+
+                 for (String word : words) {
+
+                wordFrequencyMap.put(word, wordFrequencyMap.getOrDefault(word, 0) + 1);
+                }
+                }
+                reader.close();
+                return wordFrequencyMap;
 
 
+            }
+        public static void main(String[] args) throws IOException {
+                String fileName = "shakespeare.txt"; 
+                TreeMap<String, Integer> wordFrequencyMap = wordFrequencyCounter(fileName);
+                System.out.println("Word Frequencies:");
+                for (Map.Entry<String, Integer> entry : wordFrequencyMap.entrySet()) {
+                    System.out.print(entry.getKey() + ": " + entry.getValue()+ " ");
+                }
+        
+                
+        
+
+            }
+        }
+        
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
 
 
 /*
